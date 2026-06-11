@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>サロン・スタッフ — Orange Stick</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Zen+Kaku+Gothic+New:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.page-hero { background: var(--blush); padding: 4rem 0 3rem; border-bottom: 1px solid var(--rule); }
+.page-hero h1 { font-family: var(--serif); font-weight: 300; font-size: clamp(2rem, 5vw, 3.2rem); margin-bottom: .5rem; }
+
+.salon-split { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.salon-photo-ph {
+  aspect-ratio: 4/3; border-radius: 8px;
+  background: var(--blush);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--stone); font-family: var(--mono); font-size: 12px;
+}
+.feature-list { list-style: none; margin-top: 1.5rem; }
+.feature-list li {
+  display: flex; gap: .75rem; align-items: flex-start;
+  padding: .7rem 0; border-bottom: 1px solid var(--rule);
+  font-size: 14px;
+}
+.feature-list li:last-child { border-bottom: none; }
+.feature-list li::before {
+  content: '—';
+  color: var(--peach); flex-shrink: 0; margin-top: 2px;
+}
+
+.staff-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 2rem; }
+.staff-card {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.staff-photo {
+  aspect-ratio: 4/3;
+  background: var(--blush);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--stone); font-family: var(--mono); font-size: 12px;
+}
+.staff-info { padding: 1.25rem 1.5rem; }
+.staff-role { font-family: var(--mono); font-size: 10px; letter-spacing: .15em; text-transform: uppercase; color: var(--peach); margin-bottom: .3rem; }
+.staff-name { font-family: var(--serif); font-size: 1.4rem; font-weight: 400; margin-bottom: .5rem; }
+.staff-bio { font-size: 13px; color: var(--stone); line-height: 1.85; }
+.staff-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .75rem; }
+.staff-tag { font-family: var(--mono); font-size: 10px; padding: 2px 8px; border: 1px solid var(--rule); border-radius: 2px; color: var(--stone); }
+
+.gel-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-top: 1.5rem; }
+.gel-item { background: var(--white); padding: 1.1rem 1rem; }
+.gel-name { font-size: 13px; font-weight: 500; margin-bottom: 3px; }
+.gel-note { font-size: 11.5px; color: var(--stone); line-height: 1.7; }
+
+.hygiene-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1rem; margin-top: 1.5rem; }
+.hy-item {
+  background: var(--white); border: 1px solid var(--rule);
+  border-radius: 6px; padding: 1rem 1.1rem;
+  display: flex; gap: .75rem; align-items: flex-start;
+}
+.hy-icon { color: var(--peach); flex-shrink: 0; font-size: 1.2rem; margin-top: 2px; }
+.hy-text { font-size: 13px; line-height: 1.75; }
+.hy-text strong { display: block; font-size: 14px; margin-bottom: 2px; }
+
+@media (max-width:680px) {
+  .salon-split { grid-template-columns: 1fr; gap: 2rem; }
+  .staff-grid { grid-template-columns: 1fr; }
+  .gel-grid { grid-template-columns: 1fr 1fr; }
+  .hygiene-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">Orange <span>Stick</span></a>
+  <div class="nav-links" id="nav-links">
+    <a href="menu.html">メニュー</a>
+    <a href="gallery.html">ギャラリー</a>
+    <a href="salon.html" class="active">サロン</a>
+    <a href="access.html">アクセス</a>
+    <a href="faq.html">FAQ</a>
+    <a href="reserve.html" class="nav-reserve">予約する</a>
+  </div>
+  <button class="nav-hamburger" aria-label="メニュー" onclick="document.getElementById('nav-links').classList.toggle('open')">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="#3D2B1F" stroke-width="1.5" stroke-linecap="round">
+      <line x1="3" y1="7" x2="19" y2="7"/><line x1="3" y1="11" x2="19" y2="11"/><line x1="3" y1="15" x2="19" y2="15"/>
+    </svg>
+  </button>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="sec-eyebrow">About Salon</div>
+    <h1>サロン・スタッフ紹介</h1>
+  </div>
+</div>
+
+<!-- SALON CONCEPT -->
+<section>
+  <div class="container">
+    <div class="salon-split">
+      <div class="reveal">
+        <div class="salon-photo-ph">サロン内観 photo</div>
+      </div>
+      <div class="reveal">
+        <div class="sec-eyebrow">Our Concept</div>
+        <h2 class="sec-h2">居心地のよい<br>小さなサロン</h2>
+        <p style="font-size:14px; color:var(--stone); line-height:2;">完全予約制のプライベートサロンです。施術中はゆっくりとリラックスしていただけるよう、落ち着いた空間づくりにこだわっています。初めての方も、ネイルが初めての方も、お気軽にご来店ください。</p>
+        <ul class="feature-list">
+          <li>完全予約制・マンツーマン施術</li>
+          <li>丁寧なカウンセリングで理想のデザインへ</li>
+          <li>短い爪・傷んだ爪も対応</li>
+          <li>駐車場完備・お子様連れも相談可</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STAFF -->
+<section class="alt">
+  <div class="container">
+    <div class="sec-eyebrow">Staff</div>
+    <h2 class="sec-h2 reveal">スタッフ紹介</h2>
+    <div class="staff-grid">
+      <div class="staff-card reveal">
+        <div class="staff-photo">スタッフ写真</div>
+        <div class="staff-info">
+          <div class="staff-role">Owner &amp; Nail Artist</div>
+          <div class="staff-name">山田 花子</div>
+          <p class="staff-bio">ネイリスト歴10年。ブライダルネイルや繊細なアートを得意としています。お客様の爪の状態に合わせた施術を心がけています。</p>
+          <div class="staff-tags">
+            <span class="staff-tag">ブライダル</span>
+            <span class="staff-tag">アート</span>
+            <span class="staff-tag">ケア</span>
+          </div>
+        </div>
+      </div>
+      <div class="staff-card reveal">
+        <div class="staff-photo">スタッフ写真</div>
+        <div class="staff-info">
+          <div class="staff-role">Nail Artist</div>
+          <div class="staff-name">鈴木 美咲</div>
+          <p class="staff-bio">トレンドデザインとシンプルネイルが得意。お客様のライフスタイルに合ったデザインをご提案します。ジェルの知識も豊富です。</p>
+          <div class="staff-tags">
+            <span class="staff-tag">トレンド</span>
+            <span class="staff-tag">シンプル</span>
+            <span class="staff-tag">フット</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GEL BRANDS -->
+<section>
+  <div class="container">
+    <div class="sec-eyebrow">Gel Brands</div>
+    <h2 class="sec-h2 reveal">使用ジェルブランド</h2>
+    <p class="sec-lead reveal">爪への負担が少ないノンサンディングジェルを中心に使用しています。</p>
+    <div class="gel-grid reveal">
+      <div class="gel-item">
+        <div class="gel-name">パラジェル</div>
+        <div class="gel-note">爪を削らないノンサンディング。爪が薄い方・傷みが気になる方に</div>
+      </div>
+      <div class="gel-item">
+        <div class="gel-name">バイオスカルプチュア</div>
+        <div class="gel-note">高品質なジェル。ツヤと持ちのよさが特徴</div>
+      </div>
+      <div class="gel-item">
+        <div class="gel-name">プリジェル</div>
+        <div class="gel-note">豊富なカラーラインナップ。季節のカラーも随時追加</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HYGIENE -->
+<section class="alt">
+  <div class="container">
+    <div class="sec-eyebrow">Hygiene</div>
+    <h2 class="sec-h2 reveal">衛生管理について</h2>
+    <div class="hygiene-grid reveal">
+      <div class="hy-item">
+        <div class="hy-icon">✦</div>
+        <div class="hy-text"><strong>器具の徹底消毒</strong>お客様ごとにニッパー・プッシャーなどの金属器具をオートクレーブ（高圧蒸気滅菌）で滅菌しています。</div>
+      </div>
+      <div class="hy-item">
+        <div class="hy-icon">✦</div>
+        <div class="hy-text"><strong>ファイル・バッファーの使い捨て</strong>紙ファイル・バッファーはお客様ごとに新品をご用意し、使い回しは一切いたしません。</div>
+      </div>
+      <div class="hy-item">
+        <div class="hy-icon">✦</div>
+        <div class="hy-text"><strong>手洗い・消毒の徹底</strong>施術前後にアルコール消毒を行い、清潔な状態で施術に臨みます。</div>
+      </div>
+      <div class="hy-item">
+        <div class="hy-icon">✦</div>
+        <div class="hy-text"><strong>換気・空気清浄</strong>サロン内は定期的に換気を行い、空気清浄機を常時稼働しています。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="text-align:center; padding: 4rem 0;">
+  <div class="container">
+    <h2 class="sec-h2 reveal">一度ご来店ください</h2>
+    <p class="sec-lead reveal" style="margin: 0 auto 2rem;">カウンセリングは無料です。まずはお気軽にご予約を。</p>
+    <a href="reserve.html" class="btn btn-primary">ご予約はこちら</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div><div class="footer-logo">Orange <span>Stick</span></div><p class="footer-desc">豊橋市のネイルサロン。<br>丁寧なカウンセリングと確かな技術で<br>あなたらしい指先をお届けします。</p></div>
+    <div class="footer-col"><h4>メニュー</h4><a href="menu.html">料金表・メニュー</a><a href="gallery.html">デザインギャラリー</a><a href="salon.html">サロン・スタッフ紹介</a><a href="faq.html">よくある質問</a></div>
+    <div class="footer-col"><h4>アクセス</h4><a href="access.html">アクセス・地図</a><a href="reserve.html">ご予約</a><p style="font-size:11px; margin-top:.5rem; line-height:1.8;">営業時間：10:00〜19:00<br>定休日：火曜日・第3月曜日<br>TEL: 0532-XX-XXXX</p></div>
+  </div>
+  <div class="footer-bottom">© 2025 Orange Stick Nail Salon, Toyohashi</div>
+</footer>
+<script>
+const obs = new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&x.target.classList.add('visible')),{threshold:.1});
+document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%3)*.1+'s';obs.observe(el);});
+</script>
+</body>
+</html>

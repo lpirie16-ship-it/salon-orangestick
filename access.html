@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>アクセス — Orange Stick</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Zen+Kaku+Gothic+New:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.page-hero { background: var(--blush); padding: 4rem 0 3rem; border-bottom: 1px solid var(--rule); }
+.page-hero h1 { font-family: var(--serif); font-weight: 300; font-size: clamp(2rem, 5vw, 3.2rem); margin-bottom: .5rem; }
+
+.access-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+.map-ph {
+  aspect-ratio: 4/3; background: #D8D0C8;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--mono); font-size: 12px; color: var(--stone);
+  position: relative; overflow: hidden;
+}
+.map-ph::after {
+  content: '📍 Google マップに差し替え';
+  position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%);
+  font-size: 10px; background: rgba(255,255,255,.8);
+  padding: 4px 10px; border-radius: 2px; white-space: nowrap;
+}
+
+.info-block { margin-bottom: 2rem; }
+.info-label { font-family: var(--mono); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--peach); margin-bottom: .4rem; }
+.info-value { font-size: 15px; line-height: 1.8; }
+.info-sub { font-size: 12.5px; color: var(--stone); margin-top: 2px; }
+
+.hours-table { width: 100%; border-collapse: collapse; margin-top: .5rem; }
+.hours-table tr { border-bottom: 1px solid var(--rule); }
+.hours-table td { padding: .55rem 0; font-size: 14px; }
+.hours-table td:last-child { text-align: right; color: var(--stone); }
+.hours-table .closed { color: var(--terra); }
+
+.tel-btn {
+  display: flex; align-items: center; gap: .6rem;
+  background: var(--deep); color: var(--white);
+  padding: .9rem 1.5rem; border-radius: 4px;
+  text-decoration: none; font-size: 15px; font-weight: 500;
+  margin-top: .75rem; transition: background .2s;
+}
+.tel-btn:hover { background: var(--terra); }
+
+@media (max-width:680px) {
+  .access-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">Orange <span>Stick</span></a>
+  <div class="nav-links" id="nav-links">
+    <a href="menu.html">メニュー</a>
+    <a href="gallery.html">ギャラリー</a>
+    <a href="salon.html">サロン</a>
+    <a href="access.html" class="active">アクセス</a>
+    <a href="faq.html">FAQ</a>
+    <a href="reserve.html" class="nav-reserve">予約する</a>
+  </div>
+  <button class="nav-hamburger" aria-label="メニュー" onclick="document.getElementById('nav-links').classList.toggle('open')">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="#3D2B1F" stroke-width="1.5" stroke-linecap="round">
+      <line x1="3" y1="7" x2="19" y2="7"/><line x1="3" y1="11" x2="19" y2="11"/><line x1="3" y1="15" x2="19" y2="15"/>
+    </svg>
+  </button>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="sec-eyebrow">Access &amp; Hours</div>
+    <h1>アクセス・営業時間</h1>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="access-grid">
+      <div class="reveal">
+        <div class="map-ph">地図エリア</div>
+        <a href="https://maps.google.com/" target="_blank" class="btn btn-outline" style="margin-top:.75rem; display:inline-block;">Google マップで開く</a>
+      </div>
+      <div class="reveal">
+        <div class="info-block">
+          <div class="info-label">住所</div>
+          <div class="info-value">〒440-XXXX<br>愛知県豊橋市〇〇町X-X-X</div>
+          <div class="info-sub">（住所は実際のものに差し替えてください）</div>
+        </div>
+        <div class="info-block">
+          <div class="info-label">営業時間</div>
+          <table class="hours-table">
+            <tr><td>月曜日</td><td>10:00 〜 19:00</td></tr>
+            <tr><td class="closed">火曜日</td><td class="closed">定休日</td></tr>
+            <tr><td>水曜日</td><td>10:00 〜 19:00</td></tr>
+            <tr><td>木曜日</td><td>10:00 〜 19:00</td></tr>
+            <tr><td>金曜日</td><td>10:00 〜 19:00</td></tr>
+            <tr><td>土曜日</td><td>10:00 〜 19:00</td></tr>
+            <tr><td>日曜日</td><td>10:00 〜 18:00</td></tr>
+            <tr><td class="closed">第3月曜日</td><td class="closed">定休日</td></tr>
+          </table>
+        </div>
+        <div class="info-block">
+          <div class="info-label">駐車場</div>
+          <div class="info-value">あり（2台）</div>
+          <div class="info-sub">サロン前の駐車スペースをご利用ください。</div>
+        </div>
+        <div class="info-block">
+          <div class="info-label">電話番号</div>
+          <a href="tel:0532000000" class="tel-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.65 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.56 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            0532-XX-XXXX
+          </a>
+          <div class="info-sub" style="margin-top:.4rem;">施術中はお電話に出られない場合があります。<br>LINEまたはフォームからもお問い合わせいただけます。</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- アクセス方法 -->
+    <div style="margin-top: 3.5rem;" class="reveal">
+      <div class="sec-eyebrow">How to get here</div>
+      <h2 class="sec-h2">アクセス方法</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin-top:1.25rem;">
+        <div style="background:var(--white); border:1px solid var(--rule); border-radius:8px; padding:1.25rem;">
+          <div style="font-family:var(--mono); font-size:10px; letter-spacing:.15em; text-transform:uppercase; color:var(--peach); margin-bottom:.4rem;">By Car</div>
+          <div style="font-size:14px; line-height:1.85;">〇〇インターより車で約5分。<br>サロン前に駐車場2台ございます。</div>
+        </div>
+        <div style="background:var(--white); border:1px solid var(--rule); border-radius:8px; padding:1.25rem;">
+          <div style="font-family:var(--mono); font-size:10px; letter-spacing:.15em; text-transform:uppercase; color:var(--peach); margin-bottom:.4rem;">By Train</div>
+          <div style="font-size:14px; line-height:1.85;">豊橋駅より徒歩約〇分。<br>〇〇バス停より徒歩約〇分。</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:2.5rem; text-align:center;" class="reveal">
+      <a href="reserve.html" class="btn btn-primary">ご予約はこちら</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div><div class="footer-logo">Orange <span>Stick</span></div><p class="footer-desc">豊橋市のネイルサロン。<br>丁寧なカウンセリングと確かな技術で<br>あなたらしい指先をお届けします。</p></div>
+    <div class="footer-col"><h4>メニュー</h4><a href="menu.html">料金表・メニュー</a><a href="gallery.html">デザインギャラリー</a><a href="salon.html">サロン・スタッフ紹介</a><a href="faq.html">よくある質問</a></div>
+    <div class="footer-col"><h4>アクセス</h4><a href="access.html">アクセス・地図</a><a href="reserve.html">ご予約</a><p style="font-size:11px; margin-top:.5rem; line-height:1.8;">営業時間：10:00〜19:00<br>定休日：火曜日・第3月曜日<br>TEL: 0532-XX-XXXX</p></div>
+  </div>
+  <div class="footer-bottom">© 2025 Orange Stick Nail Salon, Toyohashi</div>
+</footer>
+<script>
+const obs = new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&x.target.classList.add('visible')),{threshold:.1});
+document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%3)*.1+'s';obs.observe(el);});
+</script>
+</body>
+</html>

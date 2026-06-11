@@ -1,185 +1,301 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Orange Stick | 豊橋のネイルサロン</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orange Stick — 豊橋のネイルサロン</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Zen+Kaku+Gothic+New:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.hero {
+  min-height: calc(100vh - var(--nav-h));
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+}
+.hero-left {
+  background: var(--blush);
+  padding: 5rem 3.5rem 4rem;
+  display: flex; flex-direction: column; justify-content: center;
+  position: relative;
+}
+.hero-left::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--peach), var(--terra));
+}
+.hero-kicker {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin-bottom: 1.5rem;
+}
+.hero-h1 {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+  color: var(--deep);
+}
+.hero-h1 em { font-style: italic; color: var(--terra); }
+.hero-sub {
+  font-size: 13.5px;
+  color: var(--stone);
+  line-height: 2;
+  max-width: 340px;
+  margin-bottom: 2.5rem;
+}
+.hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+.hero-right {
+  background: var(--deep);
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero-right-inner {
+  width: 80%; max-width: 320px;
+  display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;
+  gap: 8px;
+}
+.nail-ph {
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--mono); font-size: 10px;
+  color: rgba(255,255,255,.2);
+  letter-spacing: .08em;
+}
+.nail-ph:nth-child(1) { background: #5C3D2E; aspect-ratio:3/4; }
+.nail-ph:nth-child(2) { background: #7A4F3D; aspect-ratio:3/4; grid-row: span 1; margin-top: 2rem; }
+.nail-ph:nth-child(3) { background: #4A2E1F; aspect-ratio:3/4; }
+.nail-ph:nth-child(4) { background: #6B3F2A; aspect-ratio:3/4; margin-top: -2rem; }
+
+/* ── 3 STRENGTHS ── */
+.strength-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: var(--rule);
+  border: 1px solid var(--rule);
+  margin-top: 3rem;
+}
+.strength-item {
+  background: var(--white);
+  padding: 2rem 1.75rem;
+}
+.strength-num {
+  font-family: var(--serif);
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--peach);
+  line-height: 1;
+  margin-bottom: .5rem;
+}
+.strength-title { font-weight: 500; font-size: 14px; margin-bottom: .4rem; }
+.strength-body { font-size: 12.5px; color: var(--stone); line-height: 1.8; }
+
+/* ── LATEST DESIGNS ── */
+.design-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px; margin-top: 2rem;
+}
+.design-ph {
+  aspect-ratio: 3/4;
+  border-radius: 6px;
+  display: flex; align-items: flex-end;
+  padding: .75rem;
+  position: relative;
+  overflow: hidden;
+}
+.design-ph::after {
+  content: attr(data-label);
+  font-family: var(--mono); font-size: 10px;
+  letter-spacing: .08em;
+  color: rgba(255,255,255,.6);
+  background: rgba(0,0,0,.3);
+  padding: 2px 8px; border-radius: 2px;
+}
+.design-ph:nth-child(1) { background: #D4A5A0; }
+.design-ph:nth-child(2) { background: #B8C4B0; }
+.design-ph:nth-child(3) { background: #C5B4D0; }
+.design-ph:nth-child(4) { background: #C8B08A; }
+
+/* ── VOICE ── */
+.voice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 2rem; }
+.voice-card {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+.voice-stars { color: var(--peach); font-size: 14px; margin-bottom: .6rem; }
+.voice-text { font-size: 13px; line-height: 1.85; color: var(--deep); margin-bottom: .75rem; }
+.voice-name { font-family: var(--mono); font-size: 10px; letter-spacing: .1em; color: var(--stone); }
+
+@media (max-width: 680px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-right { min-height: 50vw; }
+  .strength-grid { grid-template-columns: 1fr; }
+  .design-row { grid-template-columns: 1fr 1fr; }
+  .voice-grid { grid-template-columns: 1fr; }
+}
+</style>
 </head>
 <body>
+<nav>
+  <a href="index.html" class="nav-logo">Orange <span>Stick</span></a>
+  <div class="nav-links" id="nav-links">
+    <a href="menu.html">メニュー</a>
+    <a href="gallery.html">ギャラリー</a>
+    <a href="salon.html">サロン</a>
+    <a href="access.html">アクセス</a>
+    <a href="faq.html">FAQ</a>
+    <a href="reserve.html" class="nav-reserve">予約する</a>
+  </div>
+  <button class="nav-hamburger" aria-label="メニュー" onclick="document.getElementById('nav-links').classList.toggle('open')">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="#3D2B1F" stroke-width="1.5" stroke-linecap="round">
+      <line x1="3" y1="7" x2="19" y2="7"/><line x1="3" y1="11" x2="19" y2="11"/><line x1="3" y1="15" x2="19" y2="15"/>
+    </svg>
+  </button>
+</nav>
 
-  <!-- Header -->
-  <header class="site-header" id="site-header">
-    <div class="header-inner">
-      <a href="index.html" class="logo">
-        <span class="logo-bar" aria-hidden="true"></span>
-        <span class="logo-en">Orange Stick</span>
-        <span class="logo-ja">ネイルサロン</span>
-      </a>
-      <nav class="global-nav" aria-label="メインナビゲーション">
-        <ul>
-          <li><a href="menu.html">メニュー・料金</a></li>
-          <li><a href="gallery.html">ギャラリー</a></li>
-          <li><a href="staff.html">スタッフ</a></li>
-          <li><a href="access.html">アクセス</a></li>
-          <li><a href="reservation.html" class="nav-reserve">ご予約</a></li>
-        </ul>
-      </nav>
-      <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-kicker">Nail Salon — Toyohashi</div>
+    <h1 class="hero-h1">指先に、<br><em>小さな</em><br>よろこびを。</h1>
+    <p class="hero-sub">豊橋市のネイルサロン「Orange Stick」。丁寧なカウンセリングと確かな技術で、あなたらしい指先を仕上げます。</p>
+    <div class="hero-btns">
+      <a href="reserve.html" class="btn btn-primary">予約する</a>
+      <a href="menu.html" class="btn btn-outline">メニューを見る</a>
     </div>
-    <nav class="mobile-nav" id="mobile-nav" aria-hidden="true">
-      <ul>
-        <li><a href="menu.html">メニュー・料金</a></li>
-        <li><a href="gallery.html">ギャラリー</a></li>
-        <li><a href="staff.html">スタッフ</a></li>
-        <li><a href="access.html">アクセス</a></li>
-        <li><a href="reservation.html">ご予約</a></li>
-      </ul>
-    </nav>
-  </header>
+  </div>
+  <div class="hero-right">
+    <div class="hero-right-inner">
+      <div class="nail-ph" data-label="Spring">photo</div>
+      <div class="nail-ph" data-label="Simple">photo</div>
+      <div class="nail-ph" data-label="Art">photo</div>
+      <div class="nail-ph" data-label="Bridal">photo</div>
+    </div>
+  </div>
+</div>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-bg">
-      <div class="hero-overlay"></div>
+<!-- 3 STRENGTHS -->
+<section>
+  <div class="container">
+    <div class="sec-eyebrow">Why Orange Stick</div>
+    <h2 class="sec-h2 reveal">選ばれる3つの理由</h2>
+    <div class="strength-grid reveal">
+      <div class="strength-item">
+        <div class="strength-num">01</div>
+        <div class="strength-title">丁寧なカウンセリング</div>
+        <div class="strength-body">初めての方も安心。爪の状態・ライフスタイル・ご希望を伺い、最適なデザインをご提案します。</div>
+      </div>
+      <div class="strength-item">
+        <div class="strength-num">02</div>
+        <div class="strength-title">高品質なジェル使用</div>
+        <div class="strength-body">爪に優しいノンサンディングジェルを中心に使用。ツヤ感と持ちのよさにこだわっています。</div>
+      </div>
+      <div class="strength-item">
+        <div class="strength-num">03</div>
+        <div class="strength-title">アクセス・駐車場完備</div>
+        <div class="strength-body">豊橋市内、駐車場完備でお車でもお気軽にお越しいただけます。</div>
+      </div>
     </div>
-    <div class="hero-content">
-      <p class="hero-eyebrow">Nail Salon in Toyohashi</p>
-      <h1 class="hero-title">丁寧な施術と<br>くつろぎの時間を。</h1>
-      <p class="hero-sub">豊橋駅近くの小さなネイルサロン。<br>あなたの爪を、もっと好きになってほしい。</p>
-      <a href="reservation.html" class="btn-primary">ご予約はこちら</a>
-    </div>
-    <div class="hero-scroll-hint" aria-hidden="true">
-      <span>scroll</span>
-      <div class="scroll-line"></div>
-    </div>
-  </section>
+  </div>
+</section>
 
-  <!-- About -->
-  <section class="about section">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-img-wrap">
-          <div class="about-img-placeholder">
-            <div class="img-label">サロン写真</div>
-          </div>
-        </div>
-        <div class="about-text">
-          <p class="section-eyebrow">about</p>
-          <h2 class="section-title">Orange Stickについて</h2>
-          <p>豊橋の静かな路地に佇む、完全プライベートのネイルサロン。一対一の施術で、お客様のライフスタイルや好みに合わせたデザインをご提案します。</p>
-          <p>ジェルネイルから繊細なアートまで、爪のことならなんでもお気軽にご相談ください。</p>
-          <a href="staff.html" class="btn-text">スタッフを見る <span aria-hidden="true">→</span></a>
-        </div>
-      </div>
+<!-- LATEST DESIGNS -->
+<section class="alt">
+  <div class="container">
+    <div class="sec-eyebrow">Gallery</div>
+    <h2 class="sec-h2 reveal">最新デザイン</h2>
+    <p class="sec-lead reveal">季節のトレンドから定番シンプルまで。豊富なデザインをご用意しています。</p>
+    <div class="design-row reveal">
+      <div class="design-ph" data-label="Spring"></div>
+      <div class="design-ph" data-label="Simple"></div>
+      <div class="design-ph" data-label="Art"></div>
+      <div class="design-ph" data-label="Bridal"></div>
     </div>
-  </section>
+    <div style="margin-top:1.5rem; text-align:center;">
+      <a href="gallery.html" class="btn btn-outline">ギャラリーをすべて見る</a>
+    </div>
+  </div>
+</section>
 
-  <!-- Menu highlight -->
-  <section class="menu-highlight section section--tinted">
-    <div class="container">
-      <p class="section-eyebrow">menu</p>
-      <h2 class="section-title">人気のメニュー</h2>
-      <div class="menu-cards">
-        <article class="menu-card">
-          <div class="menu-card-icon" aria-hidden="true">◇</div>
-          <h3>ワンカラー</h3>
-          <p class="menu-card-desc">シンプルで美しいワンカラーネイル。単色でも十分に洗練された印象に。</p>
-          <p class="menu-card-price">¥5,500〜</p>
-        </article>
-        <article class="menu-card">
-          <div class="menu-card-icon" aria-hidden="true">◇</div>
-          <h3>デザインネイル</h3>
-          <p class="menu-card-desc">フラワー、マーブル、ニュアンスなど。季節やシーンに合わせてご提案します。</p>
-          <p class="menu-card-price">¥7,700〜</p>
-        </article>
-        <article class="menu-card">
-          <div class="menu-card-icon" aria-hidden="true">◇</div>
-          <h3>ケア・オフ</h3>
-          <p class="menu-card-desc">爪の健康から整える丁寧なケアコース。オフのみも承ります。</p>
-          <p class="menu-card-price">¥3,300〜</p>
-        </article>
+<!-- VOICE -->
+<section>
+  <div class="container">
+    <div class="sec-eyebrow">Voice</div>
+    <h2 class="sec-h2 reveal">お客様の声</h2>
+    <div class="voice-grid reveal">
+      <div class="voice-card">
+        <div class="voice-stars">★★★★★</div>
+        <p class="voice-text">初めてのネイルで不安でしたが、丁寧に説明してくれてとても安心できました。仕上がりも大満足です！</p>
+        <div class="voice-name">20代 / OL</div>
       </div>
-      <div class="section-cta">
-        <a href="menu.html" class="btn-secondary">すべてのメニューを見る</a>
+      <div class="voice-card">
+        <div class="voice-stars">★★★★★</div>
+        <p class="voice-text">いつも持ちが良くて助かっています。デザインの提案も上手で、毎回楽しみにしています。</p>
+        <div class="voice-name">30代 / 主婦</div>
+      </div>
+      <div class="voice-card">
+        <div class="voice-stars">★★★★★</div>
+        <p class="voice-text">結婚式のブライダルネイルをお願いしました。理想通りで大切な日に最高の指先になれました。</p>
+        <div class="voice-name">20代 / ブライダル</div>
+      </div>
+      <div class="voice-card">
+        <div class="voice-stars">★★★★☆</div>
+        <p class="voice-text">短い爪でも相談に乗ってくれて、似合うデザインを一緒に考えてくれます。気軽に通えるお店です。</p>
+        <div class="voice-name">20代 / 学生</div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Gallery preview -->
-  <section class="gallery-preview section">
-    <div class="container">
-      <p class="section-eyebrow">gallery</p>
-      <h2 class="section-title">作品ギャラリー</h2>
-      <div class="gallery-grid">
-        <div class="gallery-item"><div class="gallery-placeholder">作品写真 1</div></div>
-        <div class="gallery-item"><div class="gallery-placeholder">作品写真 2</div></div>
-        <div class="gallery-item"><div class="gallery-placeholder">作品写真 3</div></div>
-        <div class="gallery-item"><div class="gallery-placeholder">作品写真 4</div></div>
-        <div class="gallery-item"><div class="gallery-placeholder">作品写真 5</div></div>
-        <div class="gallery-item"><div class="gallery-placeholder">作品写真 6</div></div>
-      </div>
-      <div class="section-cta">
-        <a href="gallery.html" class="btn-secondary">もっと見る</a>
-      </div>
+<!-- CTA -->
+<section style="background: var(--deep); text-align:center; padding: 5rem 0;">
+  <div class="container">
+    <div class="sec-eyebrow" style="color: var(--peach);">Reserve</div>
+    <h2 class="sec-h2 reveal" style="color: var(--white);">ご予約はこちらから</h2>
+    <p class="sec-lead reveal" style="color: rgba(255,255,255,.5); margin: 0 auto 2rem;">オンライン予約・LINE・お電話でお受けしています。</p>
+    <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;" class="reveal">
+      <a href="https://beauty.hotpepper.jp/" class="btn btn-primary" target="_blank">ホットペッパーで予約</a>
+      <a href="reserve.html" class="btn btn-outline" style="border-color:rgba(255,255,255,.4); color:#fff;">その他の予約方法</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Reservation CTA -->
-  <section class="reserve-cta section">
-    <div class="container reserve-cta-inner">
-      <div class="reserve-cta-text">
-        <p class="section-eyebrow">reservation</p>
-        <h2 class="section-title">ご予約・お問い合わせ</h2>
-        <p>ホットペッパービューティー・LINE・お問い合わせフォームよりご予約いただけます。お気軽にどうぞ。</p>
-      </div>
-      <div class="reserve-cta-btns">
-        <a href="https://beauty.hotpepper.jp/" target="_blank" rel="noopener" class="btn-reserve btn-hotpepper">
-          <span class="btn-reserve-label">ホットペッパービューティーで予約</span>
-        </a>
-        <a href="https://lin.ee/XXXXXX" target="_blank" rel="noopener" class="btn-reserve btn-line">
-          <span class="btn-reserve-label">LINEで予約・お問い合わせ</span>
-        </a>
-        <a href="reservation.html" class="btn-reserve btn-form">
-          <span class="btn-reserve-label">予約フォームから予約</span>
-        </a>
-      </div>
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Orange <span>Stick</span></div>
+      <p class="footer-desc">豊橋市のネイルサロン。<br>丁寧なカウンセリングと確かな技術で<br>あなたらしい指先をお届けします。</p>
     </div>
-  </section>
+    <div class="footer-col">
+      <h4>メニュー</h4>
+      <a href="menu.html">料金表・メニュー</a>
+      <a href="gallery.html">デザインギャラリー</a>
+      <a href="salon.html">サロン・スタッフ紹介</a>
+      <a href="faq.html">よくある質問</a>
+    </div>
+    <div class="footer-col">
+      <h4>アクセス</h4>
+      <a href="access.html">アクセス・地図</a>
+      <a href="reserve.html">ご予約</a>
+      <p style="font-size:11px; margin-top:.5rem; line-height:1.8;">営業時間：10:00〜19:00<br>定休日：火曜日・第3月曜日<br>TEL: 0532-XX-XXXX</p>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2025 Orange Stick Nail Salon, Toyohashi</div>
+</footer>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-logo">
-        <span class="logo-bar" aria-hidden="true"></span>
-        <span class="logo-en">Orange Stick</span>
-      </div>
-      <div class="footer-info">
-        <p>〒441-XXXX 愛知県豊橋市○○町X-X</p>
-        <p>TEL: 0532-XX-XXXX</p>
-        <p>営業時間: 10:00〜20:00（最終受付 19:00）</p>
-        <p>定休日: 月曜日・不定休</p>
-      </div>
-      <nav class="footer-nav" aria-label="フッターナビゲーション">
-        <ul>
-          <li><a href="menu.html">メニュー・料金</a></li>
-          <li><a href="gallery.html">ギャラリー</a></li>
-          <li><a href="staff.html">スタッフ</a></li>
-          <li><a href="access.html">アクセス</a></li>
-          <li><a href="reservation.html">ご予約</a></li>
-        </ul>
-      </nav>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2025 Orange Stick Nail Salon. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <script src="js/main.js"></script>
+<script>
+const obs = new IntersectionObserver(e => e.forEach(x => x.isIntersecting && x.target.classList.add('visible')), { threshold: .1 });
+document.querySelectorAll('.reveal').forEach((el, i) => { el.style.transitionDelay = (i % 3) * .1 + 's'; obs.observe(el); });
+</script>
 </body>
 </html>

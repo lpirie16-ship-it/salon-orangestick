@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>メニュー・料金 — Orange Stick</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Zen+Kaku+Gothic+New:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.page-hero { background: var(--blush); padding: 4rem 0 3rem; border-bottom: 1px solid var(--rule); }
+.page-hero h1 { font-family: var(--serif); font-weight: 300; font-size: clamp(2rem, 5vw, 3.2rem); margin-bottom: .5rem; }
+.page-hero p { font-size: 13px; color: var(--stone); }
+
+.menu-cat { margin-bottom: 3.5rem; }
+.menu-cat-title {
+  font-family: var(--serif); font-weight: 400; font-size: 1.5rem;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: .6rem; margin-bottom: 1.25rem;
+  display: flex; align-items: baseline; gap: 1rem;
+}
+.menu-cat-title span { font-family: var(--mono); font-size: 10px; letter-spacing: .15em; color: var(--peach); text-transform: uppercase; }
+.menu-table { width: 100%; border-collapse: collapse; }
+.menu-table tr { border-bottom: 1px solid var(--rule); }
+.menu-table tr:last-child { border-bottom: none; }
+.menu-table td { padding: .9rem .5rem; font-size: 14px; vertical-align: top; }
+.menu-table td:first-child { width: 55%; }
+.menu-table td:last-child { text-align: right; font-family: var(--mono); font-size: 13px; font-weight: 500; white-space: nowrap; }
+.menu-table .menu-sub { font-size: 11.5px; color: var(--stone); margin-top: 2px; }
+.menu-table .menu-time { font-size: 11px; color: var(--peach); margin-top: 2px; font-family: var(--mono); }
+
+.option-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+.option-item { background: var(--white); padding: 1.25rem 1rem; }
+.option-name { font-size: 13px; font-weight: 500; margin-bottom: 3px; }
+.option-price { font-family: var(--mono); font-size: 12px; color: var(--terra); }
+.option-desc { font-size: 11px; color: var(--stone); margin-top: 4px; line-height: 1.7; }
+
+.notice-box { background: var(--blush); border-radius: 6px; padding: 1.25rem 1.5rem; font-size: 13px; line-height: 1.9; color: var(--deep); margin-top: 3rem; }
+.notice-box strong { color: var(--terra); }
+
+@media (max-width: 680px) {
+  .option-grid { grid-template-columns: 1fr 1fr; }
+  .menu-table td { padding: .75rem .3rem; font-size: 13px; }
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">Orange <span>Stick</span></a>
+  <div class="nav-links" id="nav-links">
+    <a href="menu.html" class="active">メニュー</a>
+    <a href="gallery.html">ギャラリー</a>
+    <a href="salon.html">サロン</a>
+    <a href="access.html">アクセス</a>
+    <a href="faq.html">FAQ</a>
+    <a href="reserve.html" class="nav-reserve">予約する</a>
+  </div>
+  <button class="nav-hamburger" aria-label="メニュー" onclick="document.getElementById('nav-links').classList.toggle('open')">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="#3D2B1F" stroke-width="1.5" stroke-linecap="round">
+      <line x1="3" y1="7" x2="19" y2="7"/><line x1="3" y1="11" x2="19" y2="11"/><line x1="3" y1="15" x2="19" y2="15"/>
+    </svg>
+  </button>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="sec-eyebrow">Menu &amp; Price</div>
+    <h1>メニュー・料金</h1>
+    <p>表示価格はすべて税込みです。施術時間は目安です。</p>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+
+    <!-- ジェルネイル -->
+    <div class="menu-cat reveal">
+      <div class="menu-cat-title">ジェルネイル <span>Gel Nail</span></div>
+      <table class="menu-table">
+        <tr>
+          <td>
+            ワンカラー（両手10本）
+            <div class="menu-sub">シンプルなカラーのみ。オフ込み</div>
+            <div class="menu-time">⏱ 約60分</div>
+          </td>
+          <td>¥6,600</td>
+        </tr>
+        <tr>
+          <td>
+            フレンチ / グラデーション（両手10本）
+            <div class="menu-sub">上品な仕上がりのベーシックデザイン</div>
+            <div class="menu-time">⏱ 約75分</div>
+          </td>
+          <td>¥7,700〜</td>
+        </tr>
+        <tr>
+          <td>
+            デザインコース（両手10本）
+            <div class="menu-sub">アートやストーンなどのデザイン込み。カウンセリング後お見積り</div>
+            <div class="menu-time">⏱ 約90〜120分</div>
+          </td>
+          <td>¥8,800〜</td>
+        </tr>
+        <tr>
+          <td>
+            ブライダルネイル
+            <div class="menu-sub">挙式・前撮りに。要事前カウンセリング</div>
+            <div class="menu-time">⏱ 約120〜150分</div>
+          </td>
+          <td>¥12,000〜</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- フットネイル -->
+    <div class="menu-cat reveal">
+      <div class="menu-cat-title">フットネイル <span>Foot Nail</span></div>
+      <table class="menu-table">
+        <tr>
+          <td>
+            ワンカラー（両足10本）
+            <div class="menu-time">⏱ 約50分</div>
+          </td>
+          <td>¥5,500</td>
+        </tr>
+        <tr>
+          <td>
+            デザインコース（両足10本）
+            <div class="menu-time">⏱ 約70〜90分</div>
+          </td>
+          <td>¥7,700〜</td>
+        </tr>
+        <tr>
+          <td>
+            フット＋手のセット割
+            <div class="menu-sub">手足同日施術で割引</div>
+          </td>
+          <td>¥1,100 OFF</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- ケア・オフ -->
+    <div class="menu-cat reveal">
+      <div class="menu-cat-title">ケア / オフ <span>Care &amp; Off</span></div>
+      <table class="menu-table">
+        <tr><td>ジェルオフのみ（他店オフ）<div class="menu-sub">他サロンのジェル除去</div></td><td>¥2,200</td></tr>
+        <tr><td>甘皮ケア（両手）</td><td>¥1,100</td></tr>
+        <tr><td>補修（1本）</td><td>¥330〜</td></tr>
+      </table>
+    </div>
+
+    <!-- オプション -->
+    <div class="menu-cat reveal">
+      <div class="menu-cat-title">オプション <span>Option</span></div>
+      <div class="option-grid">
+        <div class="option-item">
+          <div class="option-name">パーツ（ストーン等）</div>
+          <div class="option-price">¥110〜 / 個</div>
+          <div class="option-desc">スワロフスキー等もご用意</div>
+        </div>
+        <div class="option-item">
+          <div class="option-name">ジェルスカルプ（1本）</div>
+          <div class="option-price">¥660〜</div>
+          <div class="option-desc">短い爪の長さ出し</div>
+        </div>
+        <div class="option-item">
+          <div class="option-name">ラメグラデーション</div>
+          <div class="option-price">¥550〜</div>
+          <div class="option-desc">指先をきれいに見せる</div>
+        </div>
+        <div class="option-item">
+          <div class="option-name">箔・ニュアンスアート</div>
+          <div class="option-price">¥550〜 / 本</div>
+          <div class="option-desc">トレンドのアート追加</div>
+        </div>
+        <div class="option-item">
+          <div class="option-name">ネイルチップ作製</div>
+          <div class="option-price">¥2,200〜</div>
+          <div class="option-desc">イベント・前撮り向け</div>
+        </div>
+        <div class="option-item">
+          <div class="option-name">ハンドパック</div>
+          <div class="option-price">¥880</div>
+          <div class="option-desc">施術中にしっとりケア</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 学割・特典 -->
+    <div class="menu-cat reveal">
+      <div class="menu-cat-title">学割 / 初回特典 <span>Discount</span></div>
+      <table class="menu-table">
+        <tr><td>学割（学生証提示）<div class="menu-sub">全メニュー対象</div></td><td>10% OFF</td></tr>
+        <tr><td>初回限定クーポン<div class="menu-sub">はじめてのご来店の方</div></td><td>¥500 OFF</td></tr>
+        <tr><td>お友達紹介特典<div class="menu-sub">紹介した方・された方ともに</div></td><td>¥500 OFF</td></tr>
+      </table>
+    </div>
+
+    <div class="notice-box reveal">
+      <strong>ご予約・キャンセルについて</strong><br>
+      ご予約は前日までにお願いいたします。キャンセルは前日18時までにご連絡ください。当日キャンセル・無断キャンセルはキャンセル料（施術料の50%）が発生する場合があります。<br><br>
+      <strong>価格について</strong><br>
+      デザインによって金額が異なります。詳しくはカウンセリング時にお見積りいたします。
+    </div>
+
+    <div style="margin-top: 2rem; text-align:center;">
+      <a href="reserve.html" class="btn btn-primary">ご予約はこちら</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div><div class="footer-logo">Orange <span>Stick</span></div><p class="footer-desc">豊橋市のネイルサロン。<br>丁寧なカウンセリングと確かな技術で<br>あなたらしい指先をお届けします。</p></div>
+    <div class="footer-col"><h4>メニュー</h4><a href="menu.html">料金表・メニュー</a><a href="gallery.html">デザインギャラリー</a><a href="salon.html">サロン・スタッフ紹介</a><a href="faq.html">よくある質問</a></div>
+    <div class="footer-col"><h4>アクセス</h4><a href="access.html">アクセス・地図</a><a href="reserve.html">ご予約</a><p style="font-size:11px; margin-top:.5rem; line-height:1.8;">営業時間：10:00〜19:00<br>定休日：火曜日・第3月曜日<br>TEL: 0532-XX-XXXX</p></div>
+  </div>
+  <div class="footer-bottom">© 2025 Orange Stick Nail Salon, Toyohashi</div>
+</footer>
+<script>
+const obs = new IntersectionObserver(e => e.forEach(x => x.isIntersecting && x.target.classList.add('visible')), { threshold: .1 });
+document.querySelectorAll('.reveal').forEach((el,i) => { el.style.transitionDelay = (i%3)*.1+'s'; obs.observe(el); });
+</script>
+</body>
+</html>
