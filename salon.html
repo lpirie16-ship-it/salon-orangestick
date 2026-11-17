@@ -13,8 +13,9 @@
 .page-hero h1 { font-family: var(--serif); font-weight: 300; font-size: clamp(2rem, 5vw, 3.2rem); margin-bottom: .5rem; }
 
 .salon-split { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.salon-photo-ph img { width:100%; height:100%; object-fit:cover; display:block; }
 .salon-photo-ph {
-  aspect-ratio: 4/3; border-radius: 8px;
+  aspect-ratio: 4/3; border-radius: 8px; overflow:hidden;
   background: var(--blush);
   display: flex; align-items: center; justify-content: center;
   color: var(--stone); font-family: var(--mono); font-size: 12px;
@@ -31,15 +32,17 @@
   color: var(--peach); flex-shrink: 0; margin-top: 2px;
 }
 
-.staff-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 2rem; }
+.staff-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2rem; }
 .staff-card {
   background: var(--white);
   border: 1px solid var(--rule);
   border-radius: 8px;
   overflow: hidden;
 }
-.staff-photo {
-  aspect-ratio: 4/3;
+.staff-photo img { width:100%; height:100%; object-fit:cover; display:block; }
+.staff-photo { font-family: var(--serif) !important; font-size: 3rem !important; color: var(--peach) !important;
+
+  aspect-ratio: 1/1; overflow:hidden;
   background: var(--blush);
   display: flex; align-items: center; justify-content: center;
   color: var(--stone); font-family: var(--mono); font-size: 12px;
@@ -69,7 +72,7 @@
 @media (max-width:680px) {
   .salon-split { grid-template-columns: 1fr; gap: 2rem; }
   .staff-grid { grid-template-columns: 1fr; }
-  .gel-grid { grid-template-columns: 1fr 1fr; }
+  .staff-grid { grid-template-columns: 1fr 1fr !important; }
   .hygiene-grid { grid-template-columns: 1fr; }
 }
 </style>
@@ -83,6 +86,7 @@
     <a href="salon.html" class="active">サロン</a>
     <a href="access.html">アクセス</a>
     <a href="faq.html">FAQ</a>
+    <a href="https://lpirie16-ship-it.github.io/orangestick-school/" target="_blank">スクール</a>
     <a href="reserve.html" class="nav-reserve">予約する</a>
   </div>
   <button class="nav-hamburger" aria-label="メニュー" onclick="document.getElementById('nav-links').classList.toggle('open')">
@@ -104,17 +108,18 @@
   <div class="container">
     <div class="salon-split">
       <div class="reveal">
-        <div class="salon-photo-ph">サロン内観 photo</div>
+        <div class="salon-photo-ph"><img src="images/hero.jpg" alt="ネイルケアの施術風景"></div>
       </div>
       <div class="reveal">
         <div class="sec-eyebrow">Our Concept</div>
-        <h2 class="sec-h2">居心地のよい<br>小さなサロン</h2>
-        <p style="font-size:14px; color:var(--stone); line-height:2;">完全予約制のプライベートサロンです。施術中はゆっくりとリラックスしていただけるよう、落ち着いた空間づくりにこだわっています。初めての方も、ネイルが初めての方も、お気軽にご来店ください。</p>
+        <h2 class="sec-h2">落ち着ける空間で<br>丁寧な施術を</h2>
+        <p style="font-size:14px; color:var(--stone); line-height:2;">シンプルで飽きのこないデザインから、持ち込みデザイン・長さ出し・フットネイル・巻き爪ケアまで。約700色のカラーとサンプルの中から、あなたに似合う指先をご提案します。ネイルが初めての方も、お気軽にご来店ください。</p>
         <ul class="feature-list">
-          <li>完全予約制・マンツーマン施術</li>
-          <li>丁寧なカウンセリングで理想のデザインへ</li>
-          <li>短い爪・傷んだ爪も対応</li>
-          <li>駐車場完備・お子様連れも相談可</li>
+          <li>空きがあれば当日予約もOK</li>
+          <li>持ち込みデザイン・長さ出し・フィルイン・自爪育成に対応</li>
+          <li>ハンド3席・フット2席・リクライニングベッド1台・個室1室</li>
+          <li>駐車場10台以上（店舗前・店舗裏）</li>
+          <li>JNA本部認定ネイルスクール併設</li>
         </ul>
       </div>
     </div>
@@ -128,54 +133,64 @@
     <h2 class="sec-h2 reveal">スタッフ紹介</h2>
     <div class="staff-grid">
       <div class="staff-card reveal">
-        <div class="staff-photo">スタッフ写真</div>
+        <div class="staff-photo"><!-- 写真: <img src="images/staff-morinari.jpg" alt="森成 洋子"> -->森</div>
         <div class="staff-info">
-          <div class="staff-role">Owner &amp; Nail Artist</div>
-          <div class="staff-name">山田 花子</div>
-          <p class="staff-bio">ネイリスト歴10年。ブライダルネイルや繊細なアートを得意としています。お客様の爪の状態に合わせた施術を心がけています。</p>
-          <div class="staff-tags">
-            <span class="staff-tag">ブライダル</span>
-            <span class="staff-tag">アート</span>
-            <span class="staff-tag">ケア</span>
-          </div>
+          <div class="staff-role">Owner / Nail Artist / Brow</div>
+          <div class="staff-name">森成 洋子</div>
+          <p class="staff-bio">JNA常任本部認定講師、ネイルサロン衛生管理指導員。エステ・ブロウ・巻き爪ケアも担当しています。</p>
+          <div class="staff-tags"><span class="staff-tag">巻き爪ケア</span><span class="staff-tag">ブロウ</span><span class="staff-tag">エステ</span></div>
         </div>
       </div>
       <div class="staff-card reveal">
-        <div class="staff-photo">スタッフ写真</div>
+        <div class="staff-photo"><!-- 写真: <img src="images/staff-nakagami.jpg" alt="中神 あきな"> -->中</div>
         <div class="staff-info">
           <div class="staff-role">Nail Artist</div>
-          <div class="staff-name">鈴木 美咲</div>
-          <p class="staff-bio">トレンドデザインとシンプルネイルが得意。お客様のライフスタイルに合ったデザインをご提案します。ジェルの知識も豊富です。</p>
-          <div class="staff-tags">
-            <span class="staff-tag">トレンド</span>
-            <span class="staff-tag">シンプル</span>
-            <span class="staff-tag">フット</span>
-          </div>
+          <div class="staff-name">中神 あきな</div>
+          <p class="staff-bio">居心地のいい空間で、丁寧な施術を心がけています。</p>
+          <div class="staff-tags"><span class="staff-tag">ハンド</span><span class="staff-tag">フット</span></div>
+        </div>
+      </div>
+      <div class="staff-card reveal">
+        <div class="staff-photo"><!-- 写真: <img src="images/staff-kato.jpg" alt="加藤 きよこ"> -->加</div>
+        <div class="staff-info">
+          <div class="staff-role">Nail Artist</div>
+          <div class="staff-name">加藤 きよこ</div>
+          <p class="staff-bio">デザインのご相談もお気軽にどうぞ。</p>
+          <div class="staff-tags"><span class="staff-tag">デザイン相談</span></div>
+        </div>
+      </div>
+      <div class="staff-card reveal">
+        <div class="staff-photo"><!-- 写真: <img src="images/staff-honda.jpg" alt="本多 さくら"> -->本</div>
+        <div class="staff-info">
+          <div class="staff-role">Nail Artist / Brow</div>
+          <div class="staff-name">本多 さくら</div>
+          <p class="staff-bio">ジェルネイル検定上級取得。期間限定のJr.価格で受付中です。</p>
+          <div class="staff-tags"><span class="staff-tag">Jr.価格</span><span class="staff-tag">ブロウ</span></div>
+        </div>
+      </div>
+      <div class="staff-card reveal">
+        <div class="staff-photo"><!-- 写真: <img src="images/staff-ingu.jpg" alt="印宮 こゆき"> -->印</div>
+        <div class="staff-info">
+          <div class="staff-role">Nail Artist</div>
+          <div class="staff-name">印宮 こゆき</div>
+          <p class="staff-bio">ジェルネイル検定上級取得。期間限定のJr.価格で受付中です。</p>
+          <div class="staff-tags"><span class="staff-tag">Jr.価格</span></div>
         </div>
       </div>
     </div>
+    <p style="font-size:12.5px;color:var(--stone);margin-top:1.5rem">指名予約は<a href="https://beauty.hotpepper.jp/kr/slnH000633791/staff/" target="_blank" style="color:var(--terra)">ホットペッパービューティーのスタッフページ</a>から。</p>
   </div>
 </section>
 
-<!-- GEL BRANDS -->
+<!-- SCHOOL -->
 <section>
-  <div class="container">
-    <div class="sec-eyebrow">Gel Brands</div>
-    <h2 class="sec-h2 reveal">使用ジェルブランド</h2>
-    <p class="sec-lead reveal">爪への負担が少ないノンサンディングジェルを中心に使用しています。</p>
-    <div class="gel-grid reveal">
-      <div class="gel-item">
-        <div class="gel-name">パラジェル</div>
-        <div class="gel-note">爪を削らないノンサンディング。爪が薄い方・傷みが気になる方に</div>
-      </div>
-      <div class="gel-item">
-        <div class="gel-name">バイオスカルプチュア</div>
-        <div class="gel-note">高品質なジェル。ツヤと持ちのよさが特徴</div>
-      </div>
-      <div class="gel-item">
-        <div class="gel-name">プリジェル</div>
-        <div class="gel-note">豊富なカラーラインナップ。季節のカラーも随時追加</div>
-      </div>
+  <div class="container" style="display:grid;grid-template-columns:auto 1fr;gap:2.5rem;align-items:center">
+    <img src="images/jna-badge.png" alt="JNA本部認定校" style="width:140px;height:140px" class="reveal">
+    <div class="reveal">
+      <div class="sec-eyebrow">Nail School</div>
+      <h2 class="sec-h2">JNA本部認定ネイルスクール併設</h2>
+      <p style="font-size:14px;color:var(--stone);line-height:2;margin-bottom:1.25rem">サロンと同じ建物で、JNA本部認定校（認定番号 0123-1）のネイルスクールを運営しています。ネイリストを目指す方の見学・相談も受け付けています。</p>
+      <a href="https://lpirie16-ship-it.github.io/orangestick-school/" target="_blank" class="btn btn-outline">スクールのサイトを見る</a>
     </div>
   </div>
 </section>
@@ -188,19 +203,11 @@
     <div class="hygiene-grid reveal">
       <div class="hy-item">
         <div class="hy-icon">✦</div>
-        <div class="hy-text"><strong>器具の徹底消毒</strong>お客様ごとにニッパー・プッシャーなどの金属器具をオートクレーブ（高圧蒸気滅菌）で滅菌しています。</div>
+        <div class="hy-text"><strong>衛生管理指導員が在籍</strong>JNA認定のネイルサロン衛生管理指導員が在籍し、JNAの衛生管理の考え方に沿ってサロンを運営しています。</div>
       </div>
       <div class="hy-item">
         <div class="hy-icon">✦</div>
-        <div class="hy-text"><strong>ファイル・バッファーの使い捨て</strong>紙ファイル・バッファーはお客様ごとに新品をご用意し、使い回しは一切いたしません。</div>
-      </div>
-      <div class="hy-item">
-        <div class="hy-icon">✦</div>
-        <div class="hy-text"><strong>手洗い・消毒の徹底</strong>施術前後にアルコール消毒を行い、清潔な状態で施術に臨みます。</div>
-      </div>
-      <div class="hy-item">
-        <div class="hy-icon">✦</div>
-        <div class="hy-text"><strong>換気・空気清浄</strong>サロン内は定期的に換気を行い、空気清浄機を常時稼働しています。</div>
+        <div class="hy-text"><strong>器具・手指の消毒</strong>器具はお客様ごとに消毒し、施術前後の手指消毒を行っています。</div>
       </div>
     </div>
   </div>
@@ -208,8 +215,8 @@
 
 <section style="text-align:center; padding: 4rem 0;">
   <div class="container">
-    <h2 class="sec-h2 reveal">一度ご来店ください</h2>
-    <p class="sec-lead reveal" style="margin: 0 auto 2rem;">カウンセリングは無料です。まずはお気軽にご予約を。</p>
+    <h2 class="sec-h2 reveal">お気軽にご来店ください</h2>
+    <p class="sec-lead reveal" style="margin: 0 auto 2rem;">はじめての方向けのクーポンもご用意しています。</p>
     <a href="reserve.html" class="btn btn-primary">ご予約はこちら</a>
   </div>
 </section>
@@ -218,9 +225,9 @@
   <div class="footer-inner">
     <div><div class="footer-logo">Orange <span>Stick</span></div><p class="footer-desc">豊橋市のネイルサロン。<br>丁寧なカウンセリングと確かな技術で<br>あなたらしい指先をお届けします。</p></div>
     <div class="footer-col"><h4>メニュー</h4><a href="menu.html">料金表・メニュー</a><a href="gallery.html">デザインギャラリー</a><a href="salon.html">サロン・スタッフ紹介</a><a href="faq.html">よくある質問</a></div>
-    <div class="footer-col"><h4>アクセス</h4><a href="access.html">アクセス・地図</a><a href="reserve.html">ご予約</a><p style="font-size:11px; margin-top:.5rem; line-height:1.8;">営業時間：10:00〜19:00<br>定休日：火曜日・第3月曜日<br>TEL: 0532-XX-XXXX</p></div>
+    <div class="footer-col"><h4>アクセス</h4><a href="access.html">アクセス・地図</a><a href="reserve.html">ご予約</a><a href="https://lpirie16-ship-it.github.io/orangestick-school/" target="_blank">ネイルスクール（JNA本部認定校）</a><p style="font-size:11px; margin-top:.5rem; line-height:1.8;">愛知県豊橋市前田南町2-8-24<br>月〜土 10:00〜20:00<br>第2・4日曜 10:00〜17:00<br>定休日：第1・3・5日曜・祝日<br>TEL: <a href="tel:0532563778" style="display:inline;color:inherit">0532-56-3778</a></p></div>
   </div>
-  <div class="footer-bottom">© 2025 Orange Stick Nail Salon, Toyohashi</div>
+  <div class="footer-bottom">© 2026 Orange Stick Nail Salon, Toyohashi</div>
 </footer>
 <script>
 const obs = new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&x.target.classList.add('visible')),{threshold:.1});

@@ -71,6 +71,7 @@ nav {
   transition: background .2s;
 }
 .nav-reserve:hover { background: var(--deep); }
+.nav-links a.nav-reserve, .nav-links a.nav-reserve.active { color: var(--white); }
 .nav-hamburger { display: none; background: none; border: none; cursor: pointer; }
 
 /* ── CONTAINER ── */

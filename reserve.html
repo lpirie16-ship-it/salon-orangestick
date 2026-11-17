@@ -13,7 +13,7 @@
 .page-hero h1 { font-family: var(--serif); font-weight: 300; font-size: clamp(2rem, 5vw, 3.2rem); margin-bottom: .5rem; }
 
 /* METHOD CARDS */
-.method-cards { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.25rem; margin-bottom: 3.5rem; }
+.method-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; margin-bottom: 3.5rem; }
 .method-card {
   border: 1px solid var(--rule); border-radius: 10px;
   padding: 1.5rem; background: var(--white);
@@ -102,6 +102,7 @@
     <a href="salon.html">サロン</a>
     <a href="access.html">アクセス</a>
     <a href="faq.html">FAQ</a>
+    <a href="https://lpirie16-ship-it.github.io/orangestick-school/" target="_blank">スクール</a>
     <a href="reserve.html" class="nav-reserve active">予約する</a>
   </div>
   <button class="nav-hamburger" aria-label="メニュー" onclick="document.getElementById('nav-links').classList.toggle('open')">
@@ -115,7 +116,7 @@
   <div class="container">
     <div class="sec-eyebrow">Reservation</div>
     <h1>ご予約・お問い合わせ</h1>
-    <p style="font-size:13px; color:var(--stone);">4つの方法からお好きな方法でご予約いただけます。</p>
+    <p style="font-size:13px; color:var(--stone);">ネット・LINE・お電話からご予約いただけます。空きがあれば当日もOKです。</p>
   </div>
 </div>
 
@@ -128,8 +129,8 @@
         <div class="method-icon">🌸</div>
         <div class="method-label">Online — Hotpepper</div>
         <div class="method-title">ホットペッパービューティー</div>
-        <div class="method-desc">24時間いつでもオンライン予約が可能です。空き状況をリアルタイムで確認しながら予約できます。ポイントも貯まります。</div>
-        <a href="https://beauty.hotpepper.jp/" target="_blank" class="method-btn hpb">ホットペッパーで予約する →</a>
+        <div class="method-desc">24時間いつでもネット予約ができます。空き状況の確認、スタッフ指名、はじめての方向けクーポンもこちらから。</div>
+        <a href="https://beauty.hotpepper.jp/kr/slnH000633791/" target="_blank" class="method-btn hpb">ホットペッパーで予約する →</a>
       </div>
       <div class="method-card">
         <div class="method-icon">💬</div>
@@ -139,90 +140,17 @@
         <a href="https://line.me/ti/p/@orangestick" target="_blank" class="method-btn line">LINEで友だち追加 →</a>
       </div>
       <div class="method-card">
-        <div class="method-icon">📋</div>
-        <div class="method-label">Web Form</div>
-        <div class="method-title">Webフォームで予約</div>
-        <div class="method-desc">下のフォームに必要事項をご記入ください。送信後、1営業日以内にご連絡いたします。</div>
-        <a href="#form" class="method-btn form-btn">フォームに進む ↓</a>
-      </div>
-      <div class="method-card">
         <div class="method-icon">📞</div>
         <div class="method-label">Phone</div>
         <div class="method-title">お電話で予約</div>
-        <div class="method-desc">直接お電話でご予約いただけます。施術中は出られない場合があります。その際は折り返しご連絡します。</div>
-        <a href="tel:0532000000" class="method-btn tel">0532-XX-XXXX に電話する →</a>
+        <div class="method-desc">直接お電話でご予約いただけます。施術中は出られない場合があります。ロングの長さ出し・1週間以内のお直しはお電話・LINEで承ります。</div>
+        <a href="tel:0532563778" class="method-btn tel">0532-56-3778 に電話する →</a>
       </div>
     </div>
 
-    <!-- WEB FORM -->
-    <div class="form-section reveal" id="form">
-      <h2>Webフォームで予約</h2>
-      <p>必須項目をご記入の上、送信してください。1営業日以内にご確認のご連絡をいたします。</p>
-
-      <div id="form-body">
-        <div class="form-grid">
-          <div class="form-group">
-            <label class="form-label" for="name">お名前<span class="req">*</span></label>
-            <input class="form-input" type="text" id="name" placeholder="山田 花子" required>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="name-kana">フリガナ<span class="req">*</span></label>
-            <input class="form-input" type="text" id="name-kana" placeholder="ヤマダ ハナコ" required>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="tel">電話番号<span class="req">*</span></label>
-            <input class="form-input" type="tel" id="tel" placeholder="090-0000-0000" required>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="email">メールアドレス</label>
-            <input class="form-input" type="email" id="email" placeholder="example@email.com">
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="date1">第1希望日時<span class="req">*</span></label>
-            <input class="form-input" type="datetime-local" id="date1" required>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="date2">第2希望日時</label>
-            <input class="form-input" type="datetime-local" id="date2">
-          </div>
-          <div class="form-group form-full">
-            <label class="form-label" for="menu">ご希望メニュー<span class="req">*</span></label>
-            <select class="form-select" id="menu" required>
-              <option value="">選択してください</option>
-              <option>ジェルネイル（ワンカラー）¥6,600〜</option>
-              <option>ジェルネイル（フレンチ/グラデ）¥7,700〜</option>
-              <option>ジェルネイル（デザインコース）¥8,800〜</option>
-              <option>ブライダルネイル ¥12,000〜</option>
-              <option>フットネイル ¥5,500〜</option>
-              <option>ジェルオフのみ ¥2,200</option>
-              <option>その他・相談したい</option>
-            </select>
-          </div>
-          <div class="form-group form-full">
-            <label class="form-label">ご来店は初めてですか？<span class="req">*</span></label>
-            <div class="form-radio-group">
-              <label class="form-radio"><input type="radio" name="first" value="first" required> はじめて</label>
-              <label class="form-radio"><input type="radio" name="first" value="repeat"> 2回目以降</label>
-            </div>
-          </div>
-          <div class="form-group form-full">
-            <label class="form-label" for="note">ご要望・備考</label>
-            <textarea class="form-textarea" id="note" placeholder="デザインのご希望、爪の状態、アレルギーなど何でもお気軽にどうぞ。"></textarea>
-          </div>
-        </div>
-        <p class="form-note">
-          ※ご入力いただいた個人情報は予約確認のみに使用し、第三者への提供は行いません。<br>
-          ※キャンセルは前日18時までにご連絡ください。当日キャンセルはキャンセル料（50%）が発生する場合があります。
-        </p>
-        <button class="form-submit" id="submit-btn" onclick="submitForm()">予約リクエストを送信する</button>
-      </div>
-
-      <div class="form-success" id="form-success">
-        <div style="font-size:2rem; margin-bottom:1rem;">✉️</div>
-        <h3>ご予約リクエストを受け付けました</h3>
-        <p>ありがとうございます。<br>1営業日以内にお電話またはメールにてご確認のご連絡をいたします。<br><br>しばらくお待ちください。</p>
-        <a href="index.html" class="btn btn-outline" style="margin-top:1.5rem; display:inline-block;">トップページへ戻る</a>
-      </div>
+    <div class="notice-box reveal" style="background:var(--blush);border-radius:8px;padding:1.5rem;font-size:13px;line-height:1.9">
+      <strong style="color:var(--terra)">ネイルスクールの見学・ご相談</strong><br>
+      スクールの見学・相談（無料）もホットペッパービューティー・お電話・LINEで受け付けています。
     </div>
 
   </div>
@@ -232,29 +160,14 @@
   <div class="footer-inner">
     <div><div class="footer-logo">Orange <span>Stick</span></div><p class="footer-desc">豊橋市のネイルサロン。<br>丁寧なカウンセリングと確かな技術で<br>あなたらしい指先をお届けします。</p></div>
     <div class="footer-col"><h4>メニュー</h4><a href="menu.html">料金表・メニュー</a><a href="gallery.html">デザインギャラリー</a><a href="salon.html">サロン・スタッフ紹介</a><a href="faq.html">よくある質問</a></div>
-    <div class="footer-col"><h4>アクセス</h4><a href="access.html">アクセス・地図</a><a href="reserve.html">ご予約</a><p style="font-size:11px; margin-top:.5rem; line-height:1.8;">営業時間：10:00〜19:00<br>定休日：火曜日・第3月曜日<br>TEL: 0532-XX-XXXX</p></div>
+    <div class="footer-col"><h4>アクセス</h4><a href="access.html">アクセス・地図</a><a href="reserve.html">ご予約</a><a href="https://lpirie16-ship-it.github.io/orangestick-school/" target="_blank">ネイルスクール（JNA本部認定校）</a><p style="font-size:11px; margin-top:.5rem; line-height:1.8;">愛知県豊橋市前田南町2-8-24<br>月〜土 10:00〜20:00<br>第2・4日曜 10:00〜17:00<br>定休日：第1・3・5日曜・祝日<br>TEL: <a href="tel:0532563778" style="display:inline;color:inherit">0532-56-3778</a></p></div>
   </div>
-  <div class="footer-bottom">© 2025 Orange Stick Nail Salon, Toyohashi</div>
+  <div class="footer-bottom">© 2026 Orange Stick Nail Salon, Toyohashi</div>
 </footer>
 <script>
 const obs = new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&x.target.classList.add('visible')),{threshold:.1});
 document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%3)*.1+'s';obs.observe(el);});
 
-function submitForm() {
-  const name = document.getElementById('name').value.trim();
-  const tel  = document.getElementById('tel').value.trim();
-  const menu = document.getElementById('menu').value;
-  const first = document.querySelector('input[name="first"]:checked');
-  const date1 = document.getElementById('date1').value;
-  if (!name || !tel || !menu || !first || !date1) {
-    alert('必須項目（*）をすべてご記入ください。');
-    return;
-  }
-  // ここにFetch/Formspreeなどのエンドポイントを追加できます
-  // 現在はデモとして成功画面を表示
-  document.getElementById('form-body').style.display = 'none';
-  document.getElementById('form-success').style.display = 'block';
-}
 </script>
 </body>
 </html>

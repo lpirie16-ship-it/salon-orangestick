@@ -58,11 +58,7 @@
   position: relative;
   overflow: hidden;
 }
-.hero-right-inner {
-  width: 80%; max-width: 320px;
-  display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;
-  gap: 8px;
-}
+.hero-right img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
 .nail-ph {
   border-radius: 8px;
   display: flex; align-items: center; justify-content: center;
@@ -119,10 +115,15 @@
   background: rgba(0,0,0,.3);
   padding: 2px 8px; border-radius: 2px;
 }
-.design-ph:nth-child(1) { background: #D4A5A0; }
-.design-ph:nth-child(2) { background: #B8C4B0; }
-.design-ph:nth-child(3) { background: #C5B4D0; }
-.design-ph:nth-child(4) { background: #C8B08A; }
+.pop-card { background: var(--white); border: 1px solid var(--rule); border-radius: 8px; padding: 1.4rem 1.2rem; display:flex; flex-direction:column; gap:.4rem; text-decoration:none; color:inherit; transition:border-color .2s; }
+.pop-card:hover { border-color: var(--terra); }
+.pop-tag { font-family: var(--mono); font-size: 10px; letter-spacing:.12em; color: var(--terra); }
+.pop-name { font-size: 14px; font-weight: 500; line-height:1.6; }
+.pop-desc { font-size: 12px; color: var(--stone); line-height:1.7; flex:1; }
+.pop-price { font-family: var(--mono); font-size: 15px; color: var(--deep); }
+.rating-box { display:flex; gap:2.5rem; align-items:center; flex-wrap:wrap; background: var(--white); border:1px solid var(--rule); border-radius:8px; padding:2rem; margin-top:2rem; }
+.rating-num { font-family: var(--serif); font-size: 4rem; line-height:1; color: var(--terra); }
+.rating-num small { font-size: 1rem; color: var(--stone); margin-left:.3rem; }
 
 /* ── VOICE ── */
 .voice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 2rem; }
@@ -140,8 +141,7 @@
   .hero { grid-template-columns: 1fr; }
   .hero-right { min-height: 50vw; }
   .strength-grid { grid-template-columns: 1fr; }
-  .design-row { grid-template-columns: 1fr 1fr; }
-  .voice-grid { grid-template-columns: 1fr; }
+  .design-row { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -154,6 +154,7 @@
     <a href="salon.html">サロン</a>
     <a href="access.html">アクセス</a>
     <a href="faq.html">FAQ</a>
+    <a href="https://lpirie16-ship-it.github.io/orangestick-school/" target="_blank">スクール</a>
     <a href="reserve.html" class="nav-reserve">予約する</a>
   </div>
   <button class="nav-hamburger" aria-label="メニュー" onclick="document.getElementById('nav-links').classList.toggle('open')">
@@ -166,22 +167,18 @@
 <!-- HERO -->
 <div class="hero">
   <div class="hero-left">
-    <div class="hero-kicker">Nail Salon — Toyohashi</div>
+    <div class="hero-kicker">Nail Salon — Toyohashi Maeda-minami</div>
     <h1 class="hero-h1">指先に、<br><em>小さな</em><br>よろこびを。</h1>
-    <p class="hero-sub">豊橋市のネイルサロン「Orange Stick」。丁寧なカウンセリングと確かな技術で、あなたらしい指先を仕上げます。</p>
+    <p class="hero-sub">豊橋市前田南町のネイルサロン「Orange Stick」。落ち着ける空間で、丁寧なケアと確かな技術。当日予約・持ち込みデザインもお気軽にどうぞ。</p>
     <div class="hero-btns">
-      <a href="reserve.html" class="btn btn-primary">予約する</a>
+      <a href="https://beauty.hotpepper.jp/kr/slnH000633791/" target="_blank" class="btn btn-primary">ネットで予約</a>
       <a href="menu.html" class="btn btn-outline">メニューを見る</a>
     </div>
   </div>
   <div class="hero-right">
-    <div class="hero-right-inner">
-      <div class="nail-ph" data-label="Spring">photo</div>
-      <div class="nail-ph" data-label="Simple">photo</div>
-      <div class="nail-ph" data-label="Art">photo</div>
-      <div class="nail-ph" data-label="Bridal">photo</div>
-    </div>
+    <img src="images/hero.jpg" alt="オレンジスティックでのネイルケアの様子">
   </div>
+</div>
 </div>
 
 <!-- 3 STRENGTHS -->
@@ -192,18 +189,18 @@
     <div class="strength-grid reveal">
       <div class="strength-item">
         <div class="strength-num">01</div>
-        <div class="strength-title">丁寧なカウンセリング</div>
-        <div class="strength-body">初めての方も安心。爪の状態・ライフスタイル・ご希望を伺い、最適なデザインをご提案します。</div>
+        <div class="strength-title">落ち着ける空間で、丁寧な施術</div>
+        <div class="strength-body">甘皮ケアや自爪育成など、仕上がりの土台になるケアを大切にしています。空きがあれば当日予約もOKです。</div>
       </div>
       <div class="strength-item">
         <div class="strength-num">02</div>
-        <div class="strength-title">高品質なジェル使用</div>
-        <div class="strength-body">爪に優しいノンサンディングジェルを中心に使用。ツヤ感と持ちのよさにこだわっています。</div>
+        <div class="strength-title">約700色・持ち込みデザインOK</div>
+        <div class="strength-body">豊富なカラーとサンプルから選べます。SNSで見つけたデザインの持ち込みや、長さ出し・フットネイルにも対応。</div>
       </div>
       <div class="strength-item">
         <div class="strength-num">03</div>
-        <div class="strength-title">アクセス・駐車場完備</div>
-        <div class="strength-body">豊橋市内、駐車場完備でお車でもお気軽にお越しいただけます。</div>
+        <div class="strength-title">広い駐車場・JNA認定校併設</div>
+        <div class="strength-body">駐車場は10台以上。JNA本部認定のネイルスクールを併設し、検定上級取得のネイリストが在籍しています。</div>
       </div>
     </div>
   </div>
@@ -212,17 +209,17 @@
 <!-- LATEST DESIGNS -->
 <section class="alt">
   <div class="container">
-    <div class="sec-eyebrow">Gallery</div>
-    <h2 class="sec-h2 reveal">最新デザイン</h2>
-    <p class="sec-lead reveal">季節のトレンドから定番シンプルまで。豊富なデザインをご用意しています。</p>
+    <div class="sec-eyebrow">Popular Menu</div>
+    <h2 class="sec-h2 reveal">はじめての方に人気のメニュー</h2>
+    <p class="sec-lead reveal">ホットペッパービューティーの新規クーポン。ソフトジェルオフ無料のクーポンもあります。</p>
     <div class="design-row reveal">
-      <div class="design-ph" data-label="Spring"></div>
-      <div class="design-ph" data-label="Simple"></div>
-      <div class="design-ph" data-label="Art"></div>
-      <div class="design-ph" data-label="Bridal"></div>
+      <a class="pop-card" href="https://beauty.hotpepper.jp/kr/slnH000633791/coupon/" target="_blank"><span class="pop-tag">HAND / 新規</span><span class="pop-name">ちゅるんとワンカラー or ラメグラデ</span><span class="pop-desc">オフィスネイル・自爪育成にも。ソフトジェルオフ無料</span><span class="pop-price">¥6,930</span></a>
+      <a class="pop-card" href="https://beauty.hotpepper.jp/kr/slnH000633791/coupon/" target="_blank"><span class="pop-tag">HAND / 新規</span><span class="pop-name">うるうるマグネットネイル</span><span class="pop-desc">水光・フラッシュマグ。ソフトジェルオフ無料</span><span class="pop-price">¥7,930</span></a>
+      <a class="pop-card" href="https://beauty.hotpepper.jp/kr/slnH000633791/coupon/" target="_blank"><span class="pop-tag">HAND / 新規</span><span class="pop-name">季節の定額キャンペーンネイル</span><span class="pop-desc">サンプルから選べるオフ込みの定額デザイン</span><span class="pop-price">¥8,800</span></a>
+      <a class="pop-card" href="https://beauty.hotpepper.jp/kr/slnH000633791/coupon/" target="_blank"><span class="pop-tag">FOOT / 新規</span><span class="pop-name">フットネイル ジェルワンカラー</span><span class="pop-desc">フットバス・爪の形整え・甘皮ケア込み</span><span class="pop-price">¥7,700</span></a>
     </div>
     <div style="margin-top:1.5rem; text-align:center;">
-      <a href="gallery.html" class="btn btn-outline">ギャラリーをすべて見る</a>
+      <a href="menu.html" class="btn btn-outline">メニュー・料金をすべて見る</a>
     </div>
   </div>
 </section>
@@ -232,26 +229,11 @@
   <div class="container">
     <div class="sec-eyebrow">Voice</div>
     <h2 class="sec-h2 reveal">お客様の声</h2>
-    <div class="voice-grid reveal">
-      <div class="voice-card">
-        <div class="voice-stars">★★★★★</div>
-        <p class="voice-text">初めてのネイルで不安でしたが、丁寧に説明してくれてとても安心できました。仕上がりも大満足です！</p>
-        <div class="voice-name">20代 / OL</div>
-      </div>
-      <div class="voice-card">
-        <div class="voice-stars">★★★★★</div>
-        <p class="voice-text">いつも持ちが良くて助かっています。デザインの提案も上手で、毎回楽しみにしています。</p>
-        <div class="voice-name">30代 / 主婦</div>
-      </div>
-      <div class="voice-card">
-        <div class="voice-stars">★★★★★</div>
-        <p class="voice-text">結婚式のブライダルネイルをお願いしました。理想通りで大切な日に最高の指先になれました。</p>
-        <div class="voice-name">20代 / ブライダル</div>
-      </div>
-      <div class="voice-card">
-        <div class="voice-stars">★★★★☆</div>
-        <p class="voice-text">短い爪でも相談に乗ってくれて、似合うデザインを一緒に考えてくれます。気軽に通えるお店です。</p>
-        <div class="voice-name">20代 / 学生</div>
+    <div class="rating-box reveal">
+      <div><div class="rating-num">4.55<small>/ 5</small></div><div style="font-size:12px;color:var(--stone);margin-top:.4rem">ホットペッパービューティー口コミ評価<br>（2026年11月時点・21件）</div></div>
+      <div style="flex:1;min-width:240px">
+        <p style="font-size:13.5px;line-height:1.9;margin-bottom:1rem">実際にご来店いただいたお客様の口コミは、ホットペッパービューティーでご覧いただけます。</p>
+        <a href="https://beauty.hotpepper.jp/kr/slnH000633791/review/" target="_blank" class="btn btn-outline">口コミを読む</a>
       </div>
     </div>
   </div>
@@ -262,9 +244,9 @@
   <div class="container">
     <div class="sec-eyebrow" style="color: var(--peach);">Reserve</div>
     <h2 class="sec-h2 reveal" style="color: var(--white);">ご予約はこちらから</h2>
-    <p class="sec-lead reveal" style="color: rgba(255,255,255,.5); margin: 0 auto 2rem;">オンライン予約・LINE・お電話でお受けしています。</p>
+    <p class="sec-lead reveal" style="color: rgba(255,255,255,.5); margin: 0 auto 2rem;">ネット予約・LINE・お電話でお受けしています。空きがあれば当日のご予約もOKです。</p>
     <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;" class="reveal">
-      <a href="https://beauty.hotpepper.jp/" class="btn btn-primary" target="_blank">ホットペッパーで予約</a>
+      <a href="https://beauty.hotpepper.jp/kr/slnH000633791/" class="btn btn-primary" target="_blank">ホットペッパーで予約</a>
       <a href="reserve.html" class="btn btn-outline" style="border-color:rgba(255,255,255,.4); color:#fff;">その他の予約方法</a>
     </div>
   </div>
@@ -287,10 +269,10 @@
       <h4>アクセス</h4>
       <a href="access.html">アクセス・地図</a>
       <a href="reserve.html">ご予約</a>
-      <p style="font-size:11px; margin-top:.5rem; line-height:1.8;">営業時間：10:00〜19:00<br>定休日：火曜日・第3月曜日<br>TEL: 0532-XX-XXXX</p>
+      <a href="https://lpirie16-ship-it.github.io/orangestick-school/" target="_blank">ネイルスクール（JNA本部認定校）</a><p style="font-size:11px; margin-top:.5rem; line-height:1.8;">愛知県豊橋市前田南町2-8-24<br>月〜土 10:00〜20:00<br>第2・4日曜 10:00〜17:00<br>定休日：第1・3・5日曜・祝日<br>TEL: <a href="tel:0532563778" style="display:inline;color:inherit">0532-56-3778</a></p>
     </div>
   </div>
-  <div class="footer-bottom">© 2025 Orange Stick Nail Salon, Toyohashi</div>
+  <div class="footer-bottom">© 2026 Orange Stick Nail Salon, Toyohashi</div>
 </footer>
 
 <script>
