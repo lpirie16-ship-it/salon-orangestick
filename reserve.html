@@ -92,6 +92,14 @@
   .form-section { padding: 1.5rem; }
 }
 </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-926962759"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-926962759');
+</script>
 </head>
 <body>
 <nav>
@@ -102,7 +110,7 @@
     <a href="salon.html">サロン</a>
     <a href="access.html">アクセス</a>
     <a href="faq.html">FAQ</a>
-    <a href="https://lpirie16-ship-it.github.io/orangestick-school/" target="_blank">スクール</a>
+    <a href="https://lpirie16-ship-it.github.io/orangestickNschool/" target="_blank">スクール</a>
     <a href="reserve.html" class="nav-reserve active">予約する</a>
   </div>
   <button class="nav-hamburger" aria-label="メニュー" onclick="document.getElementById('nav-links').classList.toggle('open')">
@@ -160,7 +168,7 @@
   <div class="footer-inner">
     <div><div class="footer-logo">Orange <span>Stick</span></div><p class="footer-desc">豊橋市のネイルサロン。<br>丁寧なカウンセリングと確かな技術で<br>あなたらしい指先をお届けします。</p></div>
     <div class="footer-col"><h4>メニュー</h4><a href="menu.html">料金表・メニュー</a><a href="gallery.html">デザインギャラリー</a><a href="salon.html">サロン・スタッフ紹介</a><a href="faq.html">よくある質問</a></div>
-    <div class="footer-col"><h4>アクセス</h4><a href="access.html">アクセス・地図</a><a href="reserve.html">ご予約</a><a href="https://lpirie16-ship-it.github.io/orangestick-school/" target="_blank">ネイルスクール（JNA本部認定校）</a><p style="font-size:11px; margin-top:.5rem; line-height:1.8;">愛知県豊橋市前田南町2-8-24<br>月〜土 10:00〜20:00<br>第2・4日曜 10:00〜17:00<br>定休日：第1・3・5日曜・祝日<br>TEL: <a href="tel:0532563778" style="display:inline;color:inherit">0532-56-3778</a></p></div>
+    <div class="footer-col"><h4>アクセス</h4><a href="access.html">アクセス・地図</a><a href="reserve.html">ご予約</a><a href="https://lpirie16-ship-it.github.io/orangestickNschool/" target="_blank">ネイルスクール（JNA本部認定校）</a><p style="font-size:11px; margin-top:.5rem; line-height:1.8;">愛知県豊橋市前田南町2-8-24<br>月〜土 10:00〜20:00<br>第2・4日曜 10:00〜17:00<br>定休日：第1・3・5日曜・祝日<br>TEL: <a href="tel:0532563778" style="display:inline;color:inherit">0532-56-3778</a></p></div>
   </div>
   <div class="footer-bottom">© 2026 Orange Stick Nail Salon, Toyohashi</div>
 </footer>
@@ -168,6 +176,24 @@
 const obs = new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&x.target.classList.add('visible')),{threshold:.1});
 document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%3)*.1+'s';obs.observe(el);});
 
+</script>
+<script>
+/* コンバージョン計測：Google広告で作成した各アクションの「ラベル」を '' の中に入れてください */
+var OS_CONV = { tel: '', line: '', hotpepper: '', form: '' };
+function osTrack(kind){
+  try{
+    gtag('event', 'os_' + kind);
+    if (OS_CONV[kind]) gtag('event', 'conversion', { send_to: 'AW-926962759/' + OS_CONV[kind] });
+  }catch(e){}
+}
+document.addEventListener('click', function(e){
+  var a = e.target.closest && e.target.closest('a'); if(!a) return;
+  var h = a.getAttribute('href') || '';
+  if (h.indexOf('tel:') === 0) osTrack('tel');
+  else if (h.indexOf('line.me') > -1) osTrack('line');
+  else if (h.indexOf('hotpepper.jp') > -1) osTrack('hotpepper');
+  else if (h.indexOf('mailto:') === 0) osTrack('form');
+});
 </script>
 </body>
 </html>
