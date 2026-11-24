@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>スタッフ紹介｜Nail salon ORANGE STICK</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{--teal:#3fbcbc;--teal-d:#1f8f91;--ink:#333;--sub:#777;--bg:#f6fbfb;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Noto Sans JP",sans-serif;color:var(--ink);background:var(--bg);line-height:1.8}
+  .staff{max-width:1100px;margin:0 auto;padding:80px 20px}
+  .staff-head{text-align:center;margin-bottom:56px}
+  .staff-head .en{font-family:"Cormorant Garamond",serif;font-size:44px;letter-spacing:.12em;color:var(--teal-d)}
+  .staff-head .ja{font-size:14px;letter-spacing:.2em;color:var(--sub)}
+  .staff-head .orn{width:60px;height:1px;background:var(--teal);margin:18px auto 0}
+  .staff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+  .card{background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 6px 24px rgba(31,143,145,.10);transition:transform .3s}
+  .card:hover{transform:translateY(-4px)}
+  .card img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
+  .card .body{padding:24px 24px 28px}
+  .card .role{font-size:12px;letter-spacing:.15em;color:var(--teal-d);font-weight:500}
+  .card .name{font-size:22px;font-weight:700;margin:4px 0 2px}
+  .card .roma{font-family:"Cormorant Garamond",serif;font-size:15px;letter-spacing:.12em;color:var(--sub)}
+  .card .msg{font-size:14px;margin-top:14px;padding-top:14px;border-top:1px solid #e3f1f1}
+  .card dl{font-size:13px;margin-top:12px;display:grid;grid-template-columns:auto 1fr;gap:4px 12px}
+  .card dt{color:var(--teal-d);font-weight:500}
+  .card dd{color:var(--sub)}
+  @media(max-width:860px){.staff-grid{grid-template-columns:1fr;max-width:420px;margin:0 auto}.staff-head .en{font-size:36px}}
+</style>
+</head>
+<body>
+<section class="staff" id="staff">
+  <div class="staff-head">
+    <p class="en">STAFF</p>
+    <p class="ja">スタッフ紹介</p>
+    <div class="orn"></div>
+  </div>
+
+  <div class="staff-grid">
+    <!-- ▼ 森成 -->
+    <article class="card">
+      <img src="images/豊橋ネイルサロン-morinari.jpg" alt="森成" loading="lazy">
+      <div class="body">
+        <p class="role">【役職を入力】</p>
+        <h3 class="name">森成</h3>
+        <p class="roma">MORINARI</p>
+        <p class="msg">【お客様へのメッセージを入力】</p>
+        <dl>
+          <dt>資格</dt><dd>【例：JNAジェルネイル技能検定 上級】</dd>
+          <dt>得意</dt><dd>【得意なデザイン・施術】</dd>
+        </dl>
+      </div>
+    </article>
+
+    <!-- ▼ いんぐう -->
+    <article class="card">
+      <img src="images/豊橋ネイルサロン-ingu.jpg" alt="いんぐう" loading="lazy">
+      <div class="body">
+        <p class="role">【役職を入力】</p>
+        <h3 class="name">いんぐう</h3>
+        <p class="roma">INGU</p>
+        <p class="msg">【お客様へのメッセージを入力】</p>
+        <dl>
+          <dt>資格</dt><dd>【保有資格】</dd>
+          <dt>得意</dt><dd>【得意なデザイン・施術】</dd>
+        </dl>
+      </div>
+    </article>
+
+    <!-- ▼ さくら -->
+    <article class="card">
+      <img src="images/豊橋ネイルサロン-sakura.jpg" alt="さくら" loading="lazy">
+      <div class="body">
+        <p class="role">【役職を入力】</p>
+        <h3 class="name">さくら</h3>
+        <p class="roma">SAKURA</p>
+        <p class="msg">【お客様へのメッセージを入力】</p>
+        <dl>
+          <dt>資格</dt><dd>【保有資格】</dd>
+          <dt>得意</dt><dd>【得意なデザイン・施術】</dd>
+        </dl>
+      </div>
+    </article>
+  </div>
+</section>
+</body>
+</html>
